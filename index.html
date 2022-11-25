@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background: url(https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2020/02/Usign-Gradients-Featured-Image.jpg)  no-repeat;
+		}
+	</style>
+<script type="text/javascript">
+	function submit(){
+		var name=document.getElementById("name").value
+		console.log(name)
+		var password=document.getElementById("password").value
+		console.log(password)
+		fetch("http://localhost:3000/newData",{
+		method:"POST",
+		headers:{"Content-Type":"application/json"
+	},
+	body:JSON.stringify({name:name,password:password})
+	})
+	}
+	
+</script>
+<input id="name" placeholder="Enter your Name"/>
+<input id="password" placeholder="Password">
+<button onclick="submit()">Submit</button>
+</body>
+</html>
